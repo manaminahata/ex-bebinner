@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>足し算結果画面①</title>
+</head>
+<body>
+<span th:text="${session.number.num1}">ダミー</span>+
+<span th:text="${session.number.num2}">ダミー</span>=
+<span th:test="${session.number.answer}">ダミー</span><br>
+<a th:href="@{/second}">次へ</a>
+</body>
+</html>
