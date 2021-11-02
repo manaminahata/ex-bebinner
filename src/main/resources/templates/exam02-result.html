@@ -5,8 +5,9 @@
 <title>足し算結果画面①</title>
 </head>
 <body>
-<span th:text="${session.number.num1}">ダミー</span>+
-<span th:text="${session.number.num2}">ダミー</span>=
-<span th:test="${session.number.answer}">ダミー</span><br>
+<span th:text="${session.num1}">ダミー</span>+
+<span th:text="${session.num2}">ダミー</span>=
+<span th:text="${session.answer}">ダミー</span><br>
+<a th:href="@{/exam02/second}">次へ</a>
 </body>
 </html>

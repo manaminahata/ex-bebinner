@@ -27,21 +27,21 @@ public class Exam02Controller {
 	@RequestMapping("/result")
 	public String addNum(Integer num1, Integer num2) {
 		// sessionスコープに名前をつけて格納
-		session.setAttribute("number", num1);
-		session.setAttribute("number", num2);
+		session.setAttribute("num1", num1);
+		session.setAttribute("num2", num2);
+		
 		answer = num1 + num2;
+		session.setAttribute("answer", answer);
+		
 		System.out.println(num1 + "+" + num2 + "=" + answer);
+		
 		return "exam02-result";
 	}
 	
-	@RequestMapping("/result/second")
-	public String addNum2(Integer num1, Integer num2) {
-		// sessionスコープに名前をつけて格納
-		session.setAttribute("number", num1);
-		session.setAttribute("number", num2);
-		session.setAttribute("number", answer);
-		answer = num1 + num2;
-		System.out.println(num1 + "+" + num2 + "=" + answer);
+	// 引数はいらない
+	@RequestMapping("/second")
+	public String addNum2() {
+		System.out.println(5677);
 		return "exam02-result2";
 	}
 }
