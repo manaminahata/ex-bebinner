@@ -4,6 +4,7 @@ import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -29,10 +30,10 @@ public class Exam03Controller {
 	// 計算結果の出力
 	@RequestMapping("/add-price")
 	public String addPrice(Integer price1, Integer price2, Integer price3) {
-		// applicationスコープに格納
+		// applicationスコープに格納使わないので格納しなくても良い）
 		application.setAttribute("price1", price1);
-		application.setAttribute("price1", price2);
-		application.setAttribute("price1", price3);
+		application.setAttribute("price2", price2);
+		application.setAttribute("price3", price3);
 		
 		// 税抜き価格の計算
 		taxFree = price1 + price2 + price3;
