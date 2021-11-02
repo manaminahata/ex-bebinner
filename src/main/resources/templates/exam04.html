@@ -5,13 +5,18 @@
 <title>ユーザー情報</title>
 </head>
 <body>
-<form th:action="@{/exam04/result}" method="post" th:object="${UserForm}">
-<h2>ユーザー情報</h2>
-名前：<input type="text" name="name" th:value="*{name}"><br>
-年齢：<input type="text" name="age" th:value="*{age}"><br>
-コメント：<br>
-<textarea name="comment" th:value="*{comment}"></textarea><br>
-<button>登録</button>
-</form>
+	<form th:action="@{/exam04/result}" method="post"
+		th:object="${userForm}">
+		<h2>ユーザー情報</h2>
+		<div th:errors="*{name}" style="color: red">エラー！</div>
+		名前：<input type="text" name="name" th:field="*{name}"><br>
+		<div th:errors="*{age}" style="color: red">エラー！</div>
+		年齢：<input type="text" name="age" th:field="*{age}"><br>
+		<div th:errors="*{comment}" style="color: red">エラー！</div>
+		コメント：<br>
+		<textarea name="comment" th:field="*{comment}"></textarea>
+		<br>
+		<button>登録</button>
+	</form>
 </body>
 </html>
